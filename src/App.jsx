@@ -24,14 +24,14 @@ function App() {
                     path="/"
                     element={
                         <Home
-                            avatar={user.avatar_url}
-                            bio={user.bio}
-                            blog={user.blog}
-                            username={user.login}
-                            name={user.name}
-                            followers={user.followers}
-                            following={user.following}
-                            createdAt={user.created_at}
+                            avatar={user.avatar_url ?? ""}
+                            bio={user.bio ?? ""}
+                            blog={user.blog ?? ""}
+                            username={user.login ?? ""}
+                            name={user.name ?? ""}
+                            followers={user.followers ?? ""}
+                            following={user.following ?? ""}
+                            createdAt={user.created_at ?? ""}
                         />
                     }
                 />
@@ -41,11 +41,15 @@ function App() {
                 />
                 <Route
                     path="/followers"
-                    element={<Followers followers_url={user.followers_url} />}
+                    element={
+                        <Followers followers_url={user.followers_url ?? ""} />
+                    }
                 />
                 <Route
                     path="/following"
-                    element={<Following following_url={user.following_url} />}
+                    element={
+                        <Following following_url={user.following_url ?? ""} />
+                    }
                 />
                 <Route
                     path="/gists"
