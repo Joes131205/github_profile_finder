@@ -32,6 +32,7 @@ function App() {
                             followers={user.followers ?? ""}
                             following={user.following ?? ""}
                             createdAt={user.created_at ?? ""}
+                            html_url={user.html_url ?? ""}
                         />
                     }
                 />

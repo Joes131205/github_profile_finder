@@ -29,19 +29,29 @@ function SearchBar({ onUserUpdate }) {
             starred_url: `https://api.github.com/users/${userInput}/starred`,
             gists_url: `https://api.github.com/users/${userInput}/gists`,
         };
+        console.log(obj.repos_url);
         onUserUpdate(obj);
     }
 
     return (
-        <form onSubmit={searchUser}>
+        <form
+            onSubmit={searchUser}
+            className="flex flex-col items-center text-center my-4"
+        >
             <input
                 type="text"
                 placeholder="Github Username..."
                 onChange={handleChange}
                 name="username"
                 id="username"
+                className="px-5 py-2 rounded-xl border-2 border-black text-black outline-transparent font-bold text-center"
+                autoComplete="none"
             />
-            <input type="submit" value="Search" />
+            <input
+                type="submit"
+                value="Search"
+                className="cursor-pointer mt-5 px-5 py-2 bg-[#124a1f] rounded-xl hover:scale-110 transition hover:font-bold hover:bg-[#279e43]"
+            />
         </form>
     );
 }
