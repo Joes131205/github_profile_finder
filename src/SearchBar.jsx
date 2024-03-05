@@ -4,7 +4,6 @@ function SearchBar({ onUserUpdate }) {
     const [userInput, setUserInput] = useState("");
     function handleChange(e) {
         const name = e.target.value;
-        console.log(name);
         setUserInput(name);
     }
     async function searchUser(e) {
@@ -29,7 +28,6 @@ function SearchBar({ onUserUpdate }) {
             starred_url: `https://api.github.com/users/${userInput}/starred`,
             gists_url: `https://api.github.com/users/${userInput}/gists`,
         };
-        console.log(obj.repos_url);
         onUserUpdate(obj);
     }
 
@@ -45,7 +43,7 @@ function SearchBar({ onUserUpdate }) {
                 name="username"
                 id="username"
                 className="px-5 py-2 rounded-xl border-2 border-black text-black outline-transparent font-bold text-center"
-                autoComplete="none"
+                autoComplete="off"
             />
             <input
                 type="submit"

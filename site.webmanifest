@@ -1,0 +1,19 @@
+{
+    "name": "Github Profile Finder",
+    "short_name": "Github Profile Finder",
+    "icons": [
+        {
+            "src": "../public/images/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#101415",
+    "background_color": "#101415",
+    "display": "standalone"
+}

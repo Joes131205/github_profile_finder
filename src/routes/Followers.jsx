@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 
 function Followers(prop) {
     const [data, setData] = useState([]);
-    console.log(prop);
     async function getData() {
         const response = await fetch(prop.followers_url);
         const data = await response.json();
-        console.log(data);
         setData(data);
     }
     useEffect(() => {
@@ -20,7 +18,7 @@ function Followers(prop) {
 
             <ul className="flex gap-4 flex-wrap items-center justify-center">
                 {data.length === 0 ? (
-                    <p>{`None :(`}</p>
+                    <p>{`No Followers :(`}</p>
                 ) : (
                     data.map((user) => (
                         <li key={user.login}>

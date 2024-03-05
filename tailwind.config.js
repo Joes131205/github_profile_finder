@@ -2,7 +2,12 @@
 export default {
     content: ["./index.html", "./src/**/*.{js,jsx}"],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                poppins: ["Poppins", "sans-serif"],
+                fira_code: ["Fira Code", "monospace"],
+            },
+        },
     },
     plugins: [],
 };

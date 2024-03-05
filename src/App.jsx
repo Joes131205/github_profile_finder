@@ -7,6 +7,8 @@ import Repositories from "./routes/Repositories.jsx";
 import Followers from "./routes/Followers.jsx";
 import Following from "./routes/Following.jsx";
 import Gists from "./routes/Gists.jsx";
+
+import NotFound from "./routes/NotFound.jsx";
 import { useState } from "react";
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
             <SearchBar onUserUpdate={handleUserUpdate} />
             <Routes>
                 <Route
+                    exact
                     path="/"
                     element={
                         <Home
@@ -56,6 +59,7 @@ function App() {
                     path="/gists"
                     element={<Gists gists_url={user.gists_url} />}
                 />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     );

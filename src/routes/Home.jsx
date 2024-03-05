@@ -23,7 +23,9 @@ function Home({
             )}
             {username ? (
                 <a href={html_url} target="_blank">
-                    <h1 className="text-xl font-bold">{username}</h1>
+                    <h1 className="text-xl font-bold underline underline-offset-4">
+                        {username}
+                    </h1>
                 </a>
             ) : (
                 ""

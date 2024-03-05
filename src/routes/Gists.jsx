@@ -5,8 +5,6 @@ function Gists(prop) {
     async function getData() {
         const response = await fetch(prop.gists_url);
         const data = await response.json();
-        console.log(data);
-        setData(data);
     }
     useEffect(() => {
         if (prop.gists_url) {
@@ -16,9 +14,9 @@ function Gists(prop) {
     return (
         <div className="flex flex-col gap-20">
             <h1 className="font-bold text-center text-4xl">Gists</h1>
-            <ul className="flex gap-4 flex-wrap items-center justify-center">
+            <ul className="flex gap-4 flex-wrap items-center justify-center text-ellipsis whitespace-nowrap overflow-hidden">
                 {data.length === 0 ? (
-                    <p>{`None :(`}</p>
+                    <p>{`No Gists :(`}</p>
                 ) : (
                     data.map((gist) => (
                         <li key={gist.id}>
@@ -27,7 +25,9 @@ function Gists(prop) {
                                 className="flex gap-2 items-center px-5 py-2 border-2 border-white rounded-xl hover:scale-105 transition hover:font-bold"
                                 target="_blank"
                             >
-                                {gist.description ?? "Unnamed Gist"}
+                                {gist.description
+                                    ? gist.description
+                                    : "No Description"}
                                 <img
                                     src={gist.owner.avatar_url}
                                     alt={gist.owner.login}

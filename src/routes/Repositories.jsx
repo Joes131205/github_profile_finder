@@ -17,7 +17,7 @@ function Repositories(prop) {
             <h1 className="font-bold text-center text-4xl">Repositories</h1>
             <ul className="flex gap-4 flex-wrap items-center justify-center">
                 {data.length === 0 ? (
-                    <p>{`None :(`}</p>
+                    <p>{`No Repositories :(`}</p>
                 ) : (
                     data.map((repo) => (
                         <li key={repo.name}>
